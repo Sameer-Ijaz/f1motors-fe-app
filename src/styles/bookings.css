@@ -90,7 +90,10 @@
 
 .booking__car-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ); /* Change to repeat(3, 1fr) for three items in a row */
   column-gap: 2rem;
   row-gap: 2rem;
 }
@@ -108,12 +111,13 @@
   margin-bottom: 20px;
 }
 
-.car__item:nth-child(2) .car__img img,
-.car__item:nth-child(6) .car__img img,
-.car__item:nth-child(8) .car__img img {
-  width: 75%;
+.car-img {
+  width: 350px; /* Set the desired rendered width */
+  height: 190px; /* Set the desired rendered height */
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
-.car__item:nth-child(4) .car__img img {
-  width: 85%;
+.car-img:hover {
+  transform: scale(1.1); /* Scale the image by 10% on hover */
 }

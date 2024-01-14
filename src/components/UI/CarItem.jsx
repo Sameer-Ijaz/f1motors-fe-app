@@ -32,7 +32,11 @@ const CarItem = (props) => {
       </div>
 
       <div className="car__img">
-        <img src={"http://localhost:8000/api/postImages/" + image} alt="" />
+        <img
+          className="car-img"
+          src={"http://localhost:8000/api/postImages/" + image}
+          alt=""
+        />
       </div>
 
       <div className="car__item-bottom">
@@ -46,7 +50,7 @@ const CarItem = (props) => {
           </p>
         </div>
 
-        <p className="car__rent">${price}</p>
+        <p className="car__rent">{price} AED</p>
       </div>
       {isAdmin && (
         <div>

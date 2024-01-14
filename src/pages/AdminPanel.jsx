@@ -13,10 +13,19 @@ const AdminPanel = () => {
 
   const [carData, setCarData] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:8000/api/get-cars").then((res) => {
-      setCarData(res.data.data);
-    });
+    fetchData();
   }, []);
+
+  const fetchData = async () => {
+    const response = axios
+      .get("http://localhost:8000/api/get-cars")
+      .then((res) => {
+        setCarData(res.data.data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
 
   const handleDeleteCar = (id) => {
     axios
